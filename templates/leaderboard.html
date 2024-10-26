@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class = "jumbotron">
+    {% for i in range(leng) %}
+      <div class = "row-gy-5">
+        <div class="p-3 border bg-light" align = "center">
+          <a href = {{url_for("account", name = users[i].username)}} type="button" class="btn1" style = "width : 100%; margin-left : 0;">
+            <span style = "margin : 10%">
+              {{i + 1}}
+            </span>
+            <span style = "margin : 10%">
+              Name : {{users[i].username}}
+            </span>
+            <span style = "margin : 10%">
+              Money : {{users[i].money|round(2)}}
+            </span>
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

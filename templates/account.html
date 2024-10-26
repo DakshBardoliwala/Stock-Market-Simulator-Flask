@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class = "jumbotron">
+    <h2>
+      {{user.username}}'s Account
+    </h2>
+    {% if current_user.is_authenticated %}
+      {% if current_user.username == user.username %}
+        {% if current_user.username != os.environ["admin_name"] %}
+          <form method = "POST">
+            {{form.hidden_tag()}}
+            <div class = "form-check form-switch">
+              {{form.public(class="form-check-input")}}
+              {{form.public.label(class="form-check-label")}}
+            </div>
+            <div class = "form-group grid">
+              {{form.submit(class = "btn1")}}
+            </div>
+          </form>
+        {% endif %}
+      {% elif current_user.username == os.environ["admin_name"] %}
+        <button type="button" class="btn1" data-bs-toggle="modal" data-bs-target="#user">
+          Reset User {{user.username}}
+        </button>
+      {% endif %}
+    {% endif %}
+    <h3>
+      Money : {{user.money|round(2)}}
+    </h3>
+    {% if user.shares == [] %}
+      <h3>
+        User has not bought any shares yet.
+      </h3>
+    {% else %}
+      <h3>
+        Shares : 
+      </h3>
+      <ul>
+        {% for share in user.shares %}
+          Share Name : {{share.name}}
+          <br>
+          Quantity : {{share.quantity}}
+          <br>
+          Average : {{(share.total / share.quantity)|round(2)}}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+  <div class="modal fade" id="user" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reset</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to reset this user. This will delete all data related to this user.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href = {{url_for("resetUserAll")}} type="button" class="btn btn-danger">Reset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

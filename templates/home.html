@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class = "jumbotron">
+    <h1 align = "center">
+      HOME
+    </h1>
+    <h4>
+      These are a few points / tips that might be helpful : 
+    </h4>
+    <ol>
+      <li>
+        All the decimal values are shown to 2 decimal places for user convenience. But keep in mind that it is possible that the actual value might be a bit different. This might only affect you if you conduct a very large trade.
+      </li>
+      <li>
+        The prices of the shares are changed every 30 seconds in the system, but are not updated on the page. So, it is recommended that you reload the pages before any transaction.
+      </li>
+      <li>
+        Note, that none of your email ids are verified and tallied with real world accounts. Treat the email address as a guest address.
+      </li>
+      <li>
+        None of the shares in the site are intended to depict real world companies.
+      </li>
+      <li>
+        This site is not affected by the real market in any way.
+      </li>
+      <li>
+        This is just an attempt to imitate the <i>"random"</i> nature of the real market. The below factors are used to manipulate the prices of the shares in this site : 
+        <br>
+        <ol>
+          <li>
+            An overall market factor. Each share is affected by a common factor to imitate significant global events affecting the market.
+          </li>
+          <li>
+            A random factor. Each share is affected by a different random factor to imitate the events related to the company.
+          </li>
+          <li>
+            A demand-supply factor. Each share is affected a tiny bit everytime someone buys / sells its shares.
+          </li>
+        </ol>
+        <li>
+          Please note that if a shares price gets too low, its price will be restored to a starting value between 250 and 500.
+        </li>
+      </li>
+    </ol>
+  </div>
+{% endblock %}

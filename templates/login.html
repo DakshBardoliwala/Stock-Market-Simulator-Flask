@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class = "jumbotron">
+    {% if not current_user.is_authenticated %}
+      <h1>
+        Login Using Your Email
+      </h1>
+      <form method = "POST">
+        <a href = {{url_for("register")}}>
+          Not Yet Registered??
+        </a>
+        {{form.hidden_tag()}}
+        <div class = "form-group grid">
+          {{form.email.label(class = "label")}} {{form.email(class = "input")}}
+        </div>
+        <br>
+        <div class = "form-group grid">
+          {{form.password.label(class = "label")}} {{form.password(class = "input")}}
+        </div>
+        <br>
+        <div class = "form-group grid">
+          {{form.submit(class = "btn1")}}
+        </div>
+      </form>
+    {% else %}
+      <h2>
+        You are currently logged in. Do you want to login from another account? 
+        <a href={{url_for("logout")}}>
+          Logout
+        </a>
+      </h2>
+    {% endif %}
+  </div>
+{% endblock %}

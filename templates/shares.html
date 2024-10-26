@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <meta http-equiv="refresh" content="30">
+{% endblock %}
+
+{% block content %}
+  <div class = "jumbotron">
+    <div class = "container overflow-hidden">
+      {% for share in shares %}
+        <div class = "row-gy-5">
+          <div class="p-3 border bg-light" align = "center">
+            <a href = {{url_for("buy", name = share)}} type="button" class="btn1" style = "width : 100%; margin-left : 0;">
+              <span style = "margin : 10%">
+                Name : {{share}}
+              </span>
+              <span style = "margin : 10%">
+                Price : {{shares[share]["price"]|round(2)}}
+              </span>
+              <span style = "margin : 10%">
+                Available : {{shares[share]["quantity"]|int}}
+              </span>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

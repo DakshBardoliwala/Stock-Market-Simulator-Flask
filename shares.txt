@@ -1,0 +1,181 @@
+name : A;
+price : 14.971287904026367;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.7012881004034768
+,
+name : B;
+price : 4118.530411631452;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.9864437593678997
+,
+name : C;
+price : 14.978569398857232;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8911446517741463
+,
+name : D;
+price : 2023.4851481084997;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 1.0317630766871317
+,
+name : E;
+price : 91.52058280794911;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8192481601346309
+,
+name : F;
+price : 43.37973902012612;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.9197824288915841
+,
+name : G;
+price : 11.53743850782257;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8021107158041387
+,
+name : H;
+price : 2693.8319180924386;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 1.1611995007160367
+,
+name : I;
+price : 28.197901778475536;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8324766203063584
+,
+name : J;
+price : 3410.8917993985733;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 1.2605864579440142
+,
+name : K;
+price : 15.423773680643576;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.707255921071543
+,
+name : L;
+price : 7.438294499380299;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8905462315938599
+,
+name : M;
+price : 2339.5840007934326;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 1.1769482074651743
+,
+name : N;
+price : 5.109839109369512;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.9288747123586084
+,
+name : O;
+price : 134.88665910732615;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.9619810564502184
+,
+name : P;
+price : 825.3137965485536;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 1.0938276219915415
+,
+name : Q;
+price : 455;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8835530302752214
+,
+name : R;
+price : 200.24643227471853;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.9305673770939148
+,
+name : S;
+price : 16795.689967819824;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 1.2471246888546028
+,
+name : T;
+price : 88.75985186868651;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.7647299821562497
+,
+name : U;
+price : 9.91582213390357;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.934365461591763
+,
+name : V;
+price : 272;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.5105619748972887
+,
+name : W;
+price : 251.754173880715;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8917489591832741
+,
+name : X;
+price : 25.630727160713207;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.7598767276092647
+,
+name : Y;
+price : 11.519801268653586;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.8536545375399313
+,
+name : Z;
+price : 178.63455290546315;
+quantity : 10000.0;
+bought : 0;
+sold : 0;
+rate : 0.604485259011514

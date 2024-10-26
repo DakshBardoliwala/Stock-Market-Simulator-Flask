@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class = "jumbotron">
+    <h2>
+      Admin Page
+    </h2>
+    <button type="button" class="btn1" data-bs-toggle="modal" data-bs-target="#user">
+      Reset Users
+    </button>
+    <button type="button" class="btn1" data-bs-toggle="modal" data-bs-target="#share">
+      Reset Shares
+    </button>
+  </div>
+  <div class="modal fade" id="user" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reset</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to reset all users. This will delete all the users.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href = {{url_for("resetUserAll")}} type="button" class="btn btn-danger">Reset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="share" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reset</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to reset all shares. This will reset the prices of the shares and also the quantity. If you plan to reset the shares it is suggested to even reset the users.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href = {{url_for("resetShare")}} type="button" class="btn btn-danger">Reset</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

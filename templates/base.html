@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    {% endblock %}
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js" integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous"/>
+    <title>
+      Document
+    </title>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+
+      .jumbotron {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+        background-color: #e9ecef;
+        border-radius: .3rem;
+        width: 100%;
+      }
+
+      .btn1 {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: inherit;
+        line-height: 1;
+        background: none;
+        padding: 0.75em 1.5em;
+        background: #5559AB;
+        color: #ffffff;
+        border-radius: 0.75em;
+        border: 0.125em solid #5559AB;
+        transition: outline-offset 100ms ease;
+        box-shadow: 0.75em 0.75em 1.75em #000000;
+        margin: 1em;
+        margin-left: 35%;
+      }
+
+      .btn1:hover, .btn1:focus {
+        text-decoration: none;
+        color: #ffffff;
+        background: #494c82;
+        border: 0.125em solid #494c82;
+      }
+
+      .btn1:active {
+        text-decoration: none;
+        color: #ffffff;
+        box-shadow: 0.5em 0.5em 1.25em #000000;
+        transform: translateY(0.25em)
+      }
+
+      .grid {
+        width: 100%;
+        display: grid;
+        grid-column-gap: 5%;
+        grid-template-columns: 30% 60%;
+      }
+
+      .label {
+        text-align: right;
+        font-size: 1.5rem;
+        left: 0;
+        right: 45%;
+      }
+
+      .input {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        left: 35%;
+        max-width: 50%;
+        border: 0.125em solid #000000;
+        border-radius: 0.5em;
+        background: #ffffff;
+        box-shadow: 0.5em 0.5em 0.125em #000000;
+        outline: none;
+      }
+
+      .input:focus {
+        background: #99a6b3;
+        box-shadow: 0.25em 0.25em 0em #000000;
+        transform: translateY(0.25em)
+      }
+    </style>
+  </head>
+  <body>
+    <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class = "container-fluid">
+        <a class = "navbar-brand" href = {{url_for("home")}}>
+          Navbar
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class = "navbar-toggler-icon"></span>
+        </button>
+        <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+          <ul class = "navbar-nav me-auto mb-2 mb-lg-0">
+            <li class = "nav-item">
+              <a class = "nav-link" href = {{url_for("home")}}>
+                Home
+              </a>
+            </li>
+            <li class = "nav-item">
+              <a class = "nav-link" href = {{url_for("leaderboard")}}>
+                Leaderboard
+              </a>
+            </li>
+            {% if current_user.is_authenticated %}
+              {% if current_user.username == os.environ["admin_name"] %}
+                <li class = "nav-item">
+                  <a class = "nav-link" href = {{url_for("admin")}}>
+                    Admin
+                  </a>
+                </li>
+              {% endif %}
+              <li class = "nav-item">
+                <a class = "nav-link" href = {{url_for("shareList")}}>
+                  Shares
+                </a>
+              </li>
+              <li class = "nav-item">
+                <a class = "nav-link" href = {{url_for("portfolio")}}>
+                  My Portfolio
+                </a>
+              </li>
+              <li class = "nav-item">
+                <a class = "nav-link" href = {{url_for("account", name = current_user.username)}}>
+                  Account
+                </a>
+              </li>
+              <li class = "nav-item">
+                <a class = "nav-link" href = {{url_for("logout")}}>
+                  Logout
+                </a>
+              </li>
+              <li class = "nav-item nav-link disabled">
+                Money Left : {{current_user.money|round(2)}}
+              </li>
+            {% else %}
+              <li class = "nav-item">
+                <a class = "nav-link" href = {{url_for("register")}}>
+                  Register
+                </a>
+              </li>
+              <li class = "nav-item">
+                <a class = "nav-link" href = {{url_for("login")}}>
+                  Login
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
